@@ -1,0 +1,19 @@
+data:
+  name: recipe_100k
+  num_train: 20
+  num_val: 100
+  test_ind_ratio: 0.9
+  ft_noise_level: 0.0
+  hc_noise_level: 1.0
+model:
+  teacher: hgnnp
+  student: light_hgnnp
+  hid: 128
+loss:
+  lamb: 0
+  tau: 1.0
+data_marker: ${data.name}__${data.num_train}-${data.num_val}-${data.test_ind_ratio}__noise-${data.ft_noise_level}-${data.hc_noise_level}
+model_marker: ${model.teacher}-${model.student}__hid-${model.hid}
+loss_marker: lamb-${loss.lamb}__tau-${loss.tau}
+task: ${data_marker}__${model_marker}__${loss_marker}
+res_path: cache/ind/${task}
