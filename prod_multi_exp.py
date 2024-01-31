@@ -9,7 +9,7 @@ from prod_train import exp
 from utils import MultiExpMetric
 
 
-@hydra.main(config_path=".", config_name="ind_config", version_base="1.1")
+@hydra.main(config_path=".", config_name="prod_config", version_base="1.1")
 def main(cfg: DictConfig):
     logging.info(OmegaConf.to_yaml(cfg))
     res_all = MultiExpMetric()

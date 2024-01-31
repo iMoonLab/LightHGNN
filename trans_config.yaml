@@ -10,7 +10,7 @@ data:
 
 model: 
   # gcn, hgnn, hgnnp, hnhn, unigcn
-  teacher: hgnnp 
+  teacher: hgnn
   # light_hgnn, light_hgnnp
   student: light_hgnnp
   hid: 128
